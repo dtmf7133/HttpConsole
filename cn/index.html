@@ -117,17 +117,17 @@
 </head>
 <body>
 
-<div id="langhideit">
+ <div id="langhideen">
+   <br>
+   &nbsp;We have detected that you maybe speak English, do you want to be redirected to the english site? <button onclick="$('#langhideen').hide();">NO</button>&nbsp;<button onclick="window.open('https://httpconsole.numode-foss.eu','_self');">OK</button>
+   <br><br>
+ </div>
+
+ <div id="langhideit">
    <br>
    &nbsp;We have detected that you maybe speak Italian, do you want to be redirected to the italian site? <button onclick="$('#langhideit').hide();">NO</button>&nbsp;<button onclick="window.open('https://httpconsole.numode-foss.eu/it','_self');">OK</button>
    <br><br>
-</div>
-
-<div id="langhidecn">
-   <br>
-   &nbsp;We have detected that you maybe speak Chinese, do you want to be redirected to the chinese site? <button onclick="$('#langhidecn').hide();">NO</button>&nbsp;<button onclick="window.open('https://httpconsole.numode-foss.eu/cn','_self');">OK</button>
-   <br><br>
-</div>
+ </div>
 
 <div id="HCsplash" style="padding-top: 200px; text-align:center;display:none;">
 	<H1>HTTP CONSOLE</H1><br>
@@ -166,28 +166,28 @@
           <span aria-hidden="true">&times;</span>
        </button>
 	
-	   Hello and welcome to Http Console!<br><br>
-	   
-	   Http Console is a light and simple web console to manage your website.<br><br>
-	   
-	   Http Console is released under GPLv3 license, it is supplied AS-IS and we do not take any responsibility for its misusage.<br><br>
-	   
-	   First step, use the left side panel password and salt fields to create the hash to insert in the config file. Remember to manually set there also the salt value.<br><br>
-	   
-	   As you are going to run Http Console in the PHP process context, using a limited web server or phpfpm user, you must follow some simple directives for an optimal first setup:<br>
-	   <ol>
-	   <li>Create a "stage" folder in your web app path; give to the stage folder the write permissions; and set the stage path in the config file.</li>
-	   <li>In the stage path create a ".HCsampledir" folder and give to this folder the write permission. This folder will be the sample folder to copy from new folders inside the stage path.</li>
-	   <li>Likewise, in the stage path create an empty ".HCsamplefile" and give to this file the write permission. This file will be the sample file to copy from new files inside the stage path.</li>
-	   <li>Configure the max history items and max recall history items as required (default: 50).</li>	      
-	   </ol>
-	   
-	   <br>	
-	   
-	   Http Console understands a limited set of commands with a far limited set of parameters:<br>
-	   cd, cd.., cp, cp -p, cp -R, help, ls, ls -lsa, mv, pwd<br><br>	   
+ 您好，欢迎使用 Http 控制台！<br><br>
 
-       Screenshot:<br><br>
+ Http Console 是一个轻量且简单的 Web 控制台，用于管理您的网站。<br><br>
+
+ Http Console 根据 GPLv3 许可证发布，按原样提供，我们对其误用不承担任何责任。<br><br>
+
+ 第一步，使用左侧面板密码和盐字段创建要插入配置文件中的哈希值。请记住手动设置盐值。<br><br>
+
+ 当您要使用有限的 Web 服务器或 phpfpm 用户在 PHP 进程上下文中运行 Http 控制台时，您必须遵循一些简单的指令以获得最佳的首次设置：<br>
+ <ol>
+ <li>在您的网络应用路径中创建一个“stage”文件夹；给予阶段文件夹写入权限；并在配置文件中设置阶段路径。</li>
+ <li>在阶段路径中创建一个“.HCsampledir”文件夹并授予该文件夹写入权限。此文件夹将是从阶段路径内的新文件夹复制的示例文件夹。</li>
+ <li>同样，在阶段路径中创建一个空的“.HCsamplefile”并授予该文件写入权限。该文件将是从阶段路径内的新文件复制的示例文件。</li>
+ <li>根据需要配置最大历史记录项和最大召回历史记录项（默认值：50）。</li>
+ </ol>
+
+ <br>
+
+ Http 控制台理解一组有限的命令和一组非常有限的参数：<br>
+ cd、cd..、cp、cp -p、cp -R、帮助、ls、ls -lsa、mv、pwd<br><br>  
+
+     Screenshot:<br><br>
 
 	   <img src="/HCres/screenshot1.png" style="width:300px">
 
@@ -235,11 +235,11 @@
       return ret;
     }
 
-    function isChinese() {
+    function isEnglish() {
       ret = false;
       lang = window.navigator.language;
       lang = lang.toLowerCase();
-      if (lang === "cn" || lang === "zh-cn" || lang === "chinese" || lang === "chinese simplified" || lang === "mandarin") {
+      if (lang === "en" || lang === "en-us" || lang === "en-gb" || lang === "english") {
         ret = true;
       }
       return ret;
@@ -249,8 +249,8 @@
       $("#langhideit").show();
     }
 
-    if (isChinese()) {
-      $("#langhidecn").show();
+    if (isEnglish()) {
+      $("#langhideen").show();
     }
 </script>
 

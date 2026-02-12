@@ -117,9 +117,9 @@
 </head>
 <body>
 
-<div id="langhideit">
+<div id="langhideen">
    <br>
-   &nbsp;We have detected that you maybe speak Italian, do you want to be redirected to the italian site? <button onclick="$('#langhideit').hide();">NO</button>&nbsp;<button onclick="window.open('https://httpconsole.numode-foss.eu/it','_self');">OK</button>
+   &nbsp;We have detected that you maybe speak English, do you want to be redirected to the english site? <button onclick="$('#langhideen').hide();">NO</button>&nbsp;<button onclick="window.open('https://httpconsole.numode-foss.eu','_self');">OK</button>
    <br><br>
 </div>
 
@@ -166,28 +166,28 @@
           <span aria-hidden="true">&times;</span>
        </button>
 	
-	   Hello and welcome to Http Console!<br><br>
-	   
-	   Http Console is a light and simple web console to manage your website.<br><br>
-	   
-	   Http Console is released under GPLv3 license, it is supplied AS-IS and we do not take any responsibility for its misusage.<br><br>
-	   
-	   First step, use the left side panel password and salt fields to create the hash to insert in the config file. Remember to manually set there also the salt value.<br><br>
-	   
-	   As you are going to run Http Console in the PHP process context, using a limited web server or phpfpm user, you must follow some simple directives for an optimal first setup:<br>
-	   <ol>
-	   <li>Create a "stage" folder in your web app path; give to the stage folder the write permissions; and set the stage path in the config file.</li>
-	   <li>In the stage path create a ".HCsampledir" folder and give to this folder the write permission. This folder will be the sample folder to copy from new folders inside the stage path.</li>
-	   <li>Likewise, in the stage path create an empty ".HCsamplefile" and give to this file the write permission. This file will be the sample file to copy from new files inside the stage path.</li>
-	   <li>Configure the max history items and max recall history items as required (default: 50).</li>	      
-	   </ol>
-	   
-	   <br>	
-	   
-	   Http Console understands a limited set of commands with a far limited set of parameters:<br>
-	   cd, cd.., cp, cp -p, cp -R, help, ls, ls -lsa, mv, pwd<br><br>	   
+Ciao e benvenuto in HTTP Console!<br><br> 
 
-       Screenshot:<br><br>
+Http Console è una console web leggera e semplice per gestire il tuo sito web.<br><br> 
+
+Http Console è rilasciata sotto licenza GPLv3, viene fornita AS-IS e non ci assumiamo alcuna responsabilità per il suo utilizzo improprio.<br><br> 
+
+Primo passaggio, utilizzare la password del pannello laterale sinistro e i campi salt per creare l'hash da inserire nel file di configurazione. Ricordati di impostare manualmente lì anche il valore del sale.<br><br> 
+
+Poiché eseguirai Http Console nel contesto del processo PHP, utilizzando un server Web limitato o un utente phpfpm, devi seguire alcune semplici direttive per una prima configurazione ottimale:<br> 
+<ol> 
+<li>Crea una cartella "stage" nel percorso della tua app web; dare alla cartella dello stage i permessi di scrittura; e imposta il percorso della fase nel file di configurazione.</li> 
+<li>Nel percorso dello stage crea una cartella ".HCsampledir" e dai a questa cartella i permessi di scrittura. Questa cartella sarà la cartella di esempio da copiare dalle nuove cartelle all'interno del percorso dello stage.</li> 
+<li>Allo stesso modo, nel percorso dello stage crea un ".HCsamplefile" vuoto e dai a questo file il permesso di scrittura. Questo file sarà il file di esempio da copiare dai nuovi file all'interno del percorso dello stage.</li> 
+<li>Configurare gli elementi della cronologia massima e gli elementi della cronologia dei richiami massimi come richiesto (impostazione predefinita: 50).</li> 
+</ol> 
+
+<br> 
+
+La console HTTP comprende un insieme limitato di comandi con un insieme di parametri molto limitato:<br> 
+cd, cd.., cp, cp -p, cp -R, aiuto, ls, ls -lsa, mv, pwd<br><br>
+
+     Screenshot:<br><br>
 
 	   <img src="/HCres/screenshot1.png" style="width:300px">
 
@@ -224,12 +224,12 @@
 </form>
 
 <script>
-    function isItalian() {
+    function isEnglish() {
       ret = false;
       lang = window.navigator.language;
       lang = lang.toLowerCase();
       //alert(lang);
-      if (lang === "it" || lang === "it-it" || lang === "italian") {
+      if (lang === "en" || lang === "en-us" || lang === "en-gb" || lang === "english") {
         ret = true;
       }
       return ret;
@@ -245,8 +245,8 @@
       return ret;
     }
 
-    if (isItalian()) {
-      $("#langhideit").show();
+    if (isEnglish()) {
+      $("#langhideen").show();
     }
 
     if (isChinese()) {
